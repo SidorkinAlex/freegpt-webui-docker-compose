@@ -1,0 +1,16 @@
+version: '3.0'
+
+services:
+  freegpt-webui:
+    image: ramonvc/freegpt-webui
+    container_name: freegpt-webui
+    restart: always
+    hostname: freegpt-webui
+  rproxy:
+    image: nginx
+    hostname: nginx
+    ports:
+     - 81:80
+    restart: always
+    volumes:
+     - ./.nginx:/etc/nginx/conf.d/
