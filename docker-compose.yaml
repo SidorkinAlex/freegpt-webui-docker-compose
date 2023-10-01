@@ -2,10 +2,12 @@ version: '3.0'
 
 services:
   freegpt-webui:
-    image: ramonvc/freegpt-webui
+    image: fantasypeak/freegpt:latest
     container_name: freegpt-webui
     restart: always
     hostname: freegpt-webui
+#    ports:
+#     - 82:1338
   rproxy:
     image: nginx
     hostname: nginx
